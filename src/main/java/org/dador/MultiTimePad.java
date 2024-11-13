@@ -48,15 +48,22 @@ public class MultiTimePad {
 
         key = new byte[msg1.length() / 2];
         // TODO: renseigner les valeurs de la clé..
-        key[0] = 0 ;
+        key[0] = (byte) 0xce^0x54 ;
         key[1] = 0x50;
         key[2] = (byte) 0xcc;
         key[3] = (byte) 0x9f ^0x20;
         key[4] = (byte) 0xdf^0x20;
         key[5] = (byte) 0xdc ^0x20;
-
+        key[6] = (byte) 0xe5 ^0x6B;
         key[7] = (byte) 0xdb^0x20;
+        key[8] = (byte) 0xe8^0x65;
         key[9] = (byte) 0x8b^0x20;
+        key[10] = (byte) 0xdc^0x69;
+        key[11] = (byte) 0x0f^0x6E;
+
+       
+
+        key[12] = (byte) 0xC0^0x20;
 
         System.out.println("Key :");
         System.out.println(displayIndex);
