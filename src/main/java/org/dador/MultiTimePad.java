@@ -50,6 +50,7 @@ public class MultiTimePad {
         // TODO: renseigner les valeurs de la clé..
         key[0] = 0 ;
         key[1] = 0x50;
+        key[2] = (byte) 0xcc;
 
 
         System.out.println("Key :");
@@ -64,7 +65,7 @@ public class MultiTimePad {
         i = 1;
         while (i < nbMsg) {
             // TODO : modifier la ligne suivante
-            tmpByteMsg = HexConverters.toByteArrayFromHex(messages[i]);
+            tmpByteMsg = HexConverters.xorArray(byteArrayMsg[0], byteArrayMsg[i]);
             System.out.print(i);
             System.out.print(": ");
             System.out.println( HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
@@ -80,7 +81,7 @@ public class MultiTimePad {
             tmpByteMsg = HexConverters.xorArray(key, byteArrayMsg[i]);
             System.out.print(i);
             System.out.print(": ");
-            System.out.println(HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
+            System.out.println(HexConverters.toPrintableString(tmpByteMsg));
             i++;
         }
     }
